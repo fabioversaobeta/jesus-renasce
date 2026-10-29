@@ -4,7 +4,6 @@ description: "O terço ensinado a Santa Faustina Kowalska em 1935, e por que o P
 date: "2016-07-29"
 category: espiritual
 order: 1
-videos: []
 ---
 
 Esse terço foi ensinado durante uma visão que Irmã Faustina Kowalska teve em 13 de setembro de 1935: "Eu vi um anjo, o executor da cólera de Deus, a ponto de atingir a terra. Eu comecei a implorar intensamente a Deus pelo mundo, com palavras que ouvia interiormente. À medida em que assim rezava, vi que o anjo ficava desamparado, e não mais podia executar a justa punição."
