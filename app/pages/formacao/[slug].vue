@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
 
+const categoryLabels: Record<string, string> = {
+  rcc: 'A RCC',
+  ministerios: 'Ministérios da RCC',
+  espiritual: 'Vida Espiritual',
+}
+
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection('formacao').path(route.path).first(),
 )
@@ -22,21 +28,12 @@ useSeoMeta({
     <header class="page-hero">
       <div class="container">
         <NuxtLink to="/formacao" class="back">← Formação</NuxtLink>
-        <span class="eyebrow">{{ page.category === 'musica' ? 'Música e Artes' : 'Vida Espiritual' }}</span>
+        <span class="eyebrow">{{ categoryLabels[page.category] }}</span>
         <h1>{{ page.title }}</h1>
       </div>
     </header>
 
     <div class="container body">
-      <div v-if="page.videos?.length" class="videos">
-        <VideoBlock
-          v-for="video in page.videos"
-          :key="video.label"
-          :label="video.label"
-          :youtube-id="video.youtubeId"
-        />
-      </div>
-
       <ContentRenderer class="prose" :value="page" />
     </div>
   </article>
@@ -70,10 +67,4 @@ useSeoMeta({
   padding: 44px 0 88px;
 }
 
-.videos {
-  display: grid;
-  gap: 16px;
-  margin-bottom: 40px;
-  max-width: 640px;
-}
 </style>

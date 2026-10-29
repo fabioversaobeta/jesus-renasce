@@ -27,12 +27,11 @@ Isso gera `.output/public/` — uma pasta 100% estática, pronta para subir em C
 
 ## Pendências antes de ir para produção
 
-1. **Vídeos de Formação Música**: os 10 vídeos do site antigo (~2,3 GB) precisam ser enviados a um canal do YouTube do grupo. Depois, preencher o campo `youtubeId` no frontmatter de cada arquivo em `content/formacao/*.md` (hoje estão como `null`, exibindo um aviso "vídeo em processo de migração").
-2. **`site.url`** em `nuxt.config.ts` já aponta para `https://www.jesusrenasce.com.br` — conferir se é o domínio definitivo antes do primeiro deploy (usado no sitemap, canonical e Open Graph).
+1. **`site.url`** em `nuxt.config.ts` já aponta para `https://www.jesusrenasce.com.br` — conferir se é o domínio definitivo antes do primeiro deploy (usado no sitemap, canonical e Open Graph).
 
 ## Conteúdo
 
-- `content/formacao/*.md` — formação musical e espiritual (frontmatter: `title`, `description`, `date`, `category`, `order`, `videos`).
+- `content/formacao/*.md` — formação sobre a RCC, seus ministérios e vida espiritual (frontmatter: `title`, `description`, `date`, `category` — `rcc`, `ministerios` ou `espiritual` —, `order`). Todo texto deve ser fiel aos materiais oficiais da RCCBRASIL e da Igreja e terminar com uma seção **Fontes** com links.
 - `content/noticias/*.md` — notícias do meio católico (frontmatter: `title`, `description`, `date`, `source` opcional).
 
 Para adicionar uma notícia ou conteúdo de formação novo, basta criar um novo `.md` na pasta correspondente — a rota é gerada automaticamente a partir do caminho do arquivo.

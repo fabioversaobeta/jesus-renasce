@@ -9,16 +9,8 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         date: z.string(),
-        category: z.enum(['musica', 'espiritual']),
+        category: z.enum(['rcc', 'ministerios', 'espiritual']),
         order: z.number(),
-        videos: z
-          .array(
-            z.object({
-              label: z.string(),
-              youtubeId: z.string().nullable(),
-            }),
-          )
-          .default([]),
       }),
     }),
     noticias: defineCollection({
